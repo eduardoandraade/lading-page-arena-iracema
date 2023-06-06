@@ -1,16 +1,18 @@
 import "./App.css";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
-import Banner from "./components/Banner";
+import ImageCarousel from "./components/img/ImageCarousel";
+import Footer from './components/Footer'
 import Forms from "./components/Forms";
 
 function App() {
   return (
-    <div>
+<div w="100%" style={{ overflowX: 'hidden' }}>
       <Navbar />
-      <Banner />
+      <ImageCarousel/>
       <Hero />
       <Forms />
+      <Footer/>
     </div>
   );
 }
