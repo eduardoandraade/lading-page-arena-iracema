@@ -7,8 +7,10 @@ import {
   Container,
   Input,
   Button,
+  chakra,
   SimpleGrid,
   Avatar,
+  Image,
   AvatarGroup,
   useBreakpointValue,
   IconProps,
@@ -44,38 +46,76 @@ export default function Forms() {
       <Container
         as={SimpleGrid}
         maxW={"7xl"}
+        mt="2em"
         columns={{ base: 1, md: 2 }}
-        spacing={{ base: 10, lg: 32 }}
-        py={{ base: 10, sm: 20, lg: 32 }}
+        spacing={{ base: 5, lg: 250 }}
+        py={{ base: 20, sm: 40, lg: 42 }}
       >
+        
+        <Stack flex={1} spacing='50px'>
+     
+          <Heading
+            lineHeight={1.1}
+            
+            fontSize={{ base: '5xl', sm: '4xl', md: '5xl', lg: '6xl' }}>
+        
+            <Text
+              as={'span'}
+              bgGradient="linear(to-r, #FF7F00, #FFD700, #00BFFF, #9901F6)"
+              bgClip="text" fontSize={{ base: '5xl', sm: '4xl', md: '5xl', lg: '6xl' }}>
+    Garanta seu Convite
+            </Text>{' '}
        
+          </Heading>
+          
+          <Text color={"gray.500"} fontSize={{ base: "lg", sm: "lg" }} w="100%">
+              We’re looking for amazing engineers just like you! Become a part
+              of our rockstar engineering team and skyrocket your career!
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+          It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+          and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </Text>
+              <Image
+          alt={"Hero Image 1"}
+          borderRadius="20px"
+          fit={"cover"}
+          align={"center"}
+          w={"100%"}
+          h="100%"
+          src={
+            "https://arenadeiracema.plix.bio/u/p_1849_68132167162053410854264.41962711.png"
+          }
+        />
+         </Stack>
         <Stack
           bg={"gray.50"}
           rounded={"xl"}
-          p={{ base: 4, sm: 6, md: 8 }}
-          spacing={{ base: 8 }}
+          p={{ base: 6, sm: 3, md: 10 }}
+          spacing={{ base: 10 }}
           maxW={{ lg: "lg" }}
+          mt='2em'
+
         >
+       
           <Stack spacing={4}>
             <Heading
               color={"gray.800"}
               lineHeight={1.1}
               fontSize={{ base: "3xl", sm: "4xl", md: "5xl" }}
             >
-              Garanta Seu Convite
+             Só Falta Você!
               <Text
                 as={"span"}
                 bgGradient="linear-gradient(to bottom left, #FF7F00, #FFD700, #00BFFF, #9901F6)"
                 bgClip="text"
               >
-                !
+                 !
               </Text>
             </Heading>
-            <Text color={"gray.500"} fontSize={{ base: "sm", sm: "md" }}>
-              We’re looking for amazing engineers just like you! Become a part
-              of our rockstar engineering team and skyrocket your career!
-            </Text>
+           
+          
           </Stack>
+          
           <Stack spacing={{ base: 10, md: 20 }}>
    
    <Stack direction={"row"} spacing={4} align={"center"}>
@@ -132,7 +172,14 @@ export default function Forms() {
      >
        Você
      </Flex>
+     
    </Stack>
+   <Text color={"gray.500"} fontSize={{ base: "sm", sm: "lg" }}>
+             
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+          It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. 
+          
+            </Text>
  </Stack>
           <Box as={"form"} mt={5}>
             <Stack spacing={4}>
@@ -155,7 +202,7 @@ export default function Forms() {
                 }}
               />
               <Input
-                placeholder="+1 (___) __-___-___"
+                placeholder=" (__) _____-____"
                 bg={"gray.100"}
                 border={0}
                 color={"gray.500"}
@@ -175,7 +222,7 @@ export default function Forms() {
                 boxShadow: "xl",
               }}
             >
-              Submit
+              Enviar
             </Button>
           </Box>
           form
@@ -196,19 +243,19 @@ export const Blur = (props) => {
     <Icon
       width={useBreakpointValue({ base: "100%", md: "40vw", lg: "30vw" })}
       zIndex={useBreakpointValue({ base: -1, md: -1, lg: 0 })}
-      height="560px"
+      height="860px"
       viewBox="0 0 528 560"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-     <circle cx="71" cy="61" r="111" fill="#F56565" />
-      <circle cx="244" cy="106" r="139" fill="#ED64A6" />
-      <circle cy="291" r="139" fill="#ED64A6" />
-      <circle cx="80.5" cy="189.5" r="101.5" fill="#ED8936" />
-      <circle cx="196.5" cy="317.5" r="101.5" fill="#ECC94B" />
-      <circle cx="70.5" cy="458.5" r="101.5" fill="#48BB78" />
-      <circle cx="426.5" cy="-0.5" r="101.5" fill="#4299E1" />
+     <circle cx="71" cy="300" r="111" fill=" #FF7F00" />
+     
+     
+      
+     
+     
+  
     </Icon>
   );
 };

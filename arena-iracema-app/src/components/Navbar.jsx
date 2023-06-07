@@ -24,7 +24,7 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 
-import logo from "../components/img/logo-arena.png"
+import logo from "../components/img/logo.svg"
 
 function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -248,7 +248,7 @@ function Navbar() {
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Image
-            boxSize="8em"
+            boxSize="6em"
             //fontFamily={"heading"}
             
             src={logo}
@@ -257,7 +257,7 @@ function Navbar() {
            
           </Image>
 
-          <Flex display={{ base: "none", md: "flex" }} mt='3em' ml={10}>
+          <Flex display={{ base: "none", md: "flex" }} mt='2em' ml={10}>
             <DesktopNav />
           </Flex>
         </Flex>
