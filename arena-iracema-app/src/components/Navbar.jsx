@@ -35,8 +35,8 @@ function Navbar() {
       label: "Sobre",
       children: [
         {
-          label: "Explore Design Work",
-          subLabel: "Trending Design to inspire you",
+          label: "Nossa História",
+        
           href: "#",
         },
       
@@ -46,8 +46,8 @@ function Navbar() {
       label: "Convite",
       children: [
         {
-          label: "Convite",
-          subLabel: "Find your dream design job",
+          label: "Cadastre-se",
+        
           href: "#",
         },
       
@@ -111,7 +111,7 @@ function Navbar() {
         href={href}
         role={"group"}
         display={"block"}
-        p={2}
+        p={1}
         rounded={"md"}
         _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
       >
@@ -119,7 +119,7 @@ function Navbar() {
           <Box >
             <Text
               transition={"all .3s ease"}
-              _groupHover={{ color: "pink.400" }}
+              _groupHover={{ color: "#9901F6" }}
               fontWeight={500}
             >
               {label}
@@ -135,7 +135,7 @@ function Navbar() {
             align={"center"}
             flex={1}
           >
-            <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
+            <Icon color={"#9901F6"} w={5} h={5} as={ChevronRightIcon} />
           </Flex>
         </Stack>
       </Link>
@@ -148,7 +148,7 @@ function Navbar() {
         bg={useColorModeValue("white", "gray.800")}
         p={4}
         display={{ md: "none" }}
-        className="navbar"
+        //className="navbar"
       >
         {NAV_ITEMS.map((navItem) => (
           <MobileNavItem key={navItem.label} {...navItem} />

@@ -45,16 +45,16 @@ export default function Hero() {
 
   const Carousel = () => {
     const settings = {
-      infinite: true,
+      //infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
       autoplaySpeed: 3000,
       dots: true,
       appendDots: (dots) => (
-        <Flex justify="center" mt={4}>
+     
           <ul style={{ margin: "0px" }}>{dots}</ul>
-        </Flex>
+       
       ),
     };
 
@@ -67,24 +67,24 @@ export default function Hero() {
   w={"100%"}
   h="100%"
   objectFit="cover"
-  src={"https://images.sympla.com.br/63b6eac23940e-xs.png"}
+  src={"https://images.sympla.com.br/61f7eb8e3cf4a-xs.jpg"}
 />
 
         <Image
           alt={"Hero Image 2"}
-       
-          align={"center"}
+         
           w={"100%"}
           h="100%"
+          objectFit="cover"
           src={
-            "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+            "https://images.sympla.com.br/6213a2982207e-xs.jpg"
           }
         />
       </Slider>
     );
   };
   return (
-    <Container maxW={"8xl"} mt="1em">
+    <Container maxW={"7xl"} mt="3em">
            <Heading
           lineHeight={1.1}
           fontWeight={600}
@@ -106,12 +106,12 @@ export default function Hero() {
     <Stack
       align={"center"}
       spacing={{ base: 10, md: 20 }}
-      py={{ base: 10, md: 30 }}
+      py={{ base: 30, md: 30 }}
       direction={{ base: "column", md: "row" }}
     >
         
        
-      <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+      <Stack flex={1} spacing={{ base: 10, md: 10 }}>
      
  
       
@@ -122,6 +122,7 @@ export default function Hero() {
         flex={1}
         justify={"center"}
         align={"center"}
+        
         position={"relative"}
         w={"full"}
       >
@@ -138,7 +139,7 @@ export default function Hero() {
         
         <Box
           position={"relative"}
-          height={"300px"}
+        h="100%"
           rounded={"2xl"}
           boxShadow={"2xl"}
           width={"full"}

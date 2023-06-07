@@ -2,9 +2,9 @@ import { Box, Heading, Text, Button } from '@chakra-ui/react';
 
 export default function Sobre() {
   return (
-    <Box textAlign="center" py={10} px={6} mt="2em" maxW="1400px" mx="auto">
+    <Box textAlign="center" py={10} px={6} mt="4em" maxW="1400px" mx="auto">
      
-      <Text fontSize={{ base: "xl", sm: "2xl" }} mt={3} mb={2}>
+      <Text fontSize={{ base: "xl", sm: "6xl" }} textColor="#9901F6" mt={3} mb={2}>
         Conheça nossa História!
       </Text>
       <Text color={'gray.500'} mb={2} fontSize={{ base: "md", sm: "lg" }}>

@@ -209,7 +209,7 @@ export default function Forms() {
               lineHeight={1.1}
               fontSize={{ base: "3xl", sm: "4xl", md: "5xl" }}
             >
-             Só Falta Você!
+             Só Falta Você
               <Text
                 as={"span"}
                 bgGradient="linear-gradient(to bottom left, #FF7F00, #FFD700, #00BFFF, #9901F6)"
