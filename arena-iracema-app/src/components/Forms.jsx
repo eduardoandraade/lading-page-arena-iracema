@@ -17,6 +17,9 @@ import {
   Icon,
 } from "@chakra-ui/react";
 
+import { Formik, Field, Form, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+
 const avatars = [
   {
     name: "Ryan Florence",
@@ -41,6 +44,109 @@ const avatars = [
 ];
 
 export default function Forms() {
+
+  const validationSchema = Yup.object().shape({
+    firstname: Yup.string().required('Campo obrigatório'),
+    email: Yup.string().email('Email inválido').required('Campo obrigatório'),
+    phone: Yup.string().required('Campo obrigatório'),
+    dob: Yup.string().required('Campo obrigatório'),
+  });
+
+  function MyFormComponent({ onSubmit }) {
+    return (
+      <Formik
+        initialValues={{
+          firstname: '',
+          email: '',
+          phone: '',
+          dob: '',
+        }}
+        validationSchema={validationSchema}
+        onSubmit={onSubmit}
+      >
+        {({ errors, touched, isValid }) => (
+          <Form>
+            <Box as="form" mt={5}>
+              <Stack spacing={4}>
+                <Field
+                  as={Input}
+                  name="firstname"
+                  placeholder="Firstname"
+                  bg="gray.100"
+                  border={0}
+                  color="gray.500"
+                  _placeholder={{
+                    color: "gray.500",
+                  }}
+                />
+                {errors.firstname && touched.firstname && (
+                  <ErrorMessage component="span" name="firstname" color="red" />
+                )}
+  
+                <Field
+                  as={Input}
+                  name="email"
+                  placeholder="firstname@lastname.io"
+                  bg="gray.100"
+                  border={0}
+                  color="gray.500"
+                  _placeholder={{
+                    color: "gray.500",
+                  }}
+                />
+                {errors.email && touched.email && (
+                  <ErrorMessage component="span" name="email" color="red" />
+                )}
+  
+                <Field
+                  as={Input}
+                  name="phone"
+                  placeholder=" (__) _____-____"
+                  bg="gray.100"
+                  border={0}
+                  color="gray.500"
+                  _placeholder={{
+                    color: "gray.500",
+                  }}
+                />
+                {errors.phone && touched.phone && (
+                  <ErrorMessage component="span" name="phone" color="red" />
+                )}
+  
+                <Field
+                  as={Input}
+                  name="dob"
+                  type="date"
+                  bg="gray.100"
+                  border={0}
+                  color="gray.500"
+                />
+                {errors.dob && touched.dob && (
+                  <ErrorMessage component="span" name="dob" color="red" />
+                )}
+              </Stack>
+              <Button
+                type="submit"
+                fontFamily="heading"
+                mt={8}
+                w="full"
+                bgGradient="linear(to-r, #9901F6, yellow.400)"
+                color="white"
+                _hover={{
+                  bgGradient: "linear(to-r, red.400, pink.400)",
+                  boxShadow: "xl",
+                }}
+                isDisabled={!isValid}
+              >
+                Enviar
+              </Button>
+            </Box>
+          </Form>
+        )}
+      </Formik>
+    );
+  }
+  
   return (
     <Box position={"relative"}>
       <Container
@@ -171,9 +277,11 @@ export default function Forms() {
        }}
      >
        Você
+
      </Flex>
      
    </Stack>
+   <MyFormComponent/>
    <Text color={"gray.500"} fontSize={{ base: "sm", sm: "lg" }}>
              
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
@@ -183,49 +291,11 @@ export default function Forms() {
  </Stack>
           <Box as={"form"} mt={5}>
             <Stack spacing={4}>
-              <Input
-                placeholder="Firstname"
-                bg={"gray.100"}
-                border={0}
-                color={"gray.500"}
-                _placeholder={{
-                  color: "gray.500",
-                }}
-              />
-              <Input
-                placeholder="firstname@lastname.io"
-                bg={"gray.100"}
-                border={0}
-                color={"gray.500"}
-                _placeholder={{
-                  color: "gray.500",
-                }}
-              />
-              <Input
-                placeholder=" (__) _____-____"
-                bg={"gray.100"}
-                border={0}
-                color={"gray.500"}
-                _placeholder={{
-                  color: "gray.500",
-                }}
-              />
+  
             </Stack>
-            <Button
-              fontFamily={"heading"}
-              mt={8}
-              w={"full"}
-              bgGradient="linear(to-r, #9901F6,yellow.400)"
-              color={"white"}
-              _hover={{
-                bgGradient: "linear(to-r, red.400,pink.400)",
-                boxShadow: "xl",
-              }}
-            >
-              Enviar
-            </Button>
+           
           </Box>
-          form
+    
         </Stack>
       </Container>
       <Blur

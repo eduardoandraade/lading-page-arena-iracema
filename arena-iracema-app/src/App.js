@@ -8,12 +8,12 @@ import Sobre from "./components/Sobre";
 
 function App() {
   return (
-<div w="100%" style={{ overflowX: 'hidden' }}>
+    <div className="app-container">
       <Navbar />
       <ImageCarousel/>
       <Forms />
       <Hero />
-     <Sobre/>
+      <Sobre/>
       <Footer/>
     </div>
   );

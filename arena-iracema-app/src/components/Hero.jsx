@@ -84,7 +84,7 @@ export default function Hero() {
     );
   };
   return (
-    <Container maxW={"8xl"} mt="5em">
+    <Container maxW={"8xl"} mt="1em">
            <Heading
           lineHeight={1.1}
           fontWeight={600}
