@@ -9,6 +9,7 @@ import {
   Collapse,
   Icon,
   Link,
+  Image,
   Popover,
   PopoverTrigger,
   PopoverContent,
@@ -23,12 +24,14 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 
+import logo from "../components/img/logo-arena.png"
+
 function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
   const NAV_ITEMS = [
     {
-      label: "Inspiration",
+      label: "Sobre",
       children: [
         {
           label: "Explore Design Work",
@@ -43,10 +46,10 @@ function Navbar() {
       ],
     },
     {
-      label: "Find Work",
+      label: "Convite",
       children: [
         {
-          label: "Job Board",
+          label: "Convite",
           subLabel: "Find your dream design job",
           href: "#",
         },
@@ -57,14 +60,7 @@ function Navbar() {
         },
       ],
     },
-    {
-      label: "Learn Design",
-      href: "#",
-    },
-    {
-      label: "Hire Designers",
-      href: "#",
-    },
+  
   ];
 
   const DesktopNav = () => {
@@ -73,9 +69,9 @@ function Navbar() {
     const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
     return (
-      <Stack direction={"row"} spacing={4}>
+      <Stack direction={"row"} spacing={4} >
         {NAV_ITEMS.map((navItem) => (
-          <Box key={navItem.label}>
+          <Box key={navItem.label} >
             <Popover trigger={"hover"} placement={"bottom-start"}>
               <PopoverTrigger>
                 <Link
@@ -127,7 +123,7 @@ function Navbar() {
         _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
       >
         <Stack direction={"row"} align={"center"}>
-          <Box>
+          <Box >
             <Text
               transition={"all .3s ease"}
               _groupHover={{ color: "pink.400" }}
@@ -224,7 +220,7 @@ function Navbar() {
     );
   };
   return (
-    <Box>
+    <Box >
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
@@ -251,15 +247,17 @@ function Navbar() {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Text
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
+          <Image
+            boxSize="8em"
+            //fontFamily={"heading"}
+            
+            src={logo}
+            color="#FF7F00"
           >
-            Logo
-          </Text>
+           
+          </Image>
 
-          <Flex display={{ base: "none", md: "flex" }} ml={10}>
+          <Flex display={{ base: "none", md: "flex" }} mt='3em' ml={10}>
             <DesktopNav />
           </Flex>
         </Flex>
