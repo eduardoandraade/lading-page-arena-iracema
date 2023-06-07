@@ -24,7 +24,8 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 
-import logo from "../components/img/logo-arena.png"
+import logo from "../components/img/logo.svg"
+import "../App.css";
 
 function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
@@ -38,11 +39,7 @@ function Navbar() {
           subLabel: "Trending Design to inspire you",
           href: "#",
         },
-        {
-          label: "New & Noteworthy",
-          subLabel: "Up-and-coming Designers",
-          href: "#",
-        },
+      
       ],
     },
     {
@@ -53,11 +50,7 @@ function Navbar() {
           subLabel: "Find your dream design job",
           href: "#",
         },
-        {
-          label: "Freelance Projects",
-          subLabel: "An exclusive list for contract work",
-          href: "#",
-        },
+      
       ],
     },
   
@@ -69,7 +62,7 @@ function Navbar() {
     const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
     return (
-      <Stack direction={"row"} spacing={4} >
+      <Stack direction={"row"} mt="2em" spacing={4}  >
         {NAV_ITEMS.map((navItem) => (
           <Box key={navItem.label} >
             <Popover trigger={"hover"} placement={"bottom-start"}>
@@ -155,6 +148,7 @@ function Navbar() {
         bg={useColorModeValue("white", "gray.800")}
         p={4}
         display={{ md: "none" }}
+        className="navbar"
       >
         {NAV_ITEMS.map((navItem) => (
           <MobileNavItem key={navItem.label} {...navItem} />
@@ -220,7 +214,8 @@ function Navbar() {
     );
   };
   return (
-    <Box >
+    <Box //className="navbar" 
+    >
       <Flex
         bg={useColorModeValue("white", "gray.800")}
         color={useColorModeValue("gray.600", "white")}
@@ -248,7 +243,7 @@ function Navbar() {
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Image
-            boxSize="8em"
+            boxSize="6em"
             //fontFamily={"heading"}
             
             src={logo}
@@ -257,7 +252,7 @@ function Navbar() {
            
           </Image>
 
-          <Flex display={{ base: "none", md: "flex" }} mt='3em' ml={10}>
+          <Flex display={{ base: "none", md: "flex" }} mt='2em' ml={10}>
             <DesktopNav />
           </Flex>
         </Flex>

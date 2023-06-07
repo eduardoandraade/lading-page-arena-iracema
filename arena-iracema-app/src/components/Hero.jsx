@@ -8,6 +8,7 @@ import {
   Button,
   Image,
   Icon,
+  useBreakpointValue,
   IconButton,
   createIcon,
   IconProps,
@@ -18,7 +19,27 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
+export const Blur = (props) => {
+  return (
+    <Icon
+      width={useBreakpointValue({ base: "100%", md: "40vw", lg: "30vw" })}
+      zIndex={useBreakpointValue({ base: -1, md: -1, lg: 0 })}
+      height="860px"
+      viewBox="0 0 528 560"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+     <circle cx="71" cy="300" r="111" fill=" #FF7F00" />
+     
+     
+      
+     
+     
+  
+    </Icon>
+  );
+};
 
 export default function Hero() {
 
@@ -41,22 +62,20 @@ export default function Hero() {
   
     return (
       <Slider {...settings}>
-        <Image
-          alt={"Hero Image 1"}
-          fit={"cover"}
-          align={"center"}
-          w={"100%"}
-          h={"100%"}
-          src={
-            "https://images.unsplash.com/photo-1574154883606-19fa4f836c54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=871&q=80"
-          }
-        />
+      <Image
+  alt={"Hero Image 1"}
+  w={"100%"}
+  h="100%"
+  objectFit="cover"
+  src={"https://images.sympla.com.br/63b6eac23940e-xs.png"}
+/>
+
         <Image
           alt={"Hero Image 2"}
-          fit={"cover"}
+       
           align={"center"}
           w={"100%"}
-          h={"100%"}
+          h="100%"
           src={
             "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
           }
@@ -65,74 +84,40 @@ export default function Hero() {
     );
   };
   return (
-    <Container maxW={"7xl"}>
-      
-    <Stack
-      align={"center"}
-      spacing={{ base: 8, md: 10 }}
-      py={{ base: 20, md: 28 }}
-      direction={{ base: "column", md: "row" }}
-    >
-      <Stack flex={1} spacing={{ base: 5, md: 10 }}>
-     
-        <Heading
+    <Container maxW={"8xl"} mt="1em">
+           <Heading
           lineHeight={1.1}
           fontWeight={600}
           fontSize={{ base: "3xl", sm: "4xl", lg: "6xl" }}
+          textAlign="start"
         >
        
          
-          <Text
-            as={"span"}
-            position={"relative"}
-            _after={{
-              content: "''",
-              width: "full",
-              height: "30%",
-              position: "absolute",
-              bottom: 0,
-              left: 0,
-              //bg: "linear-gradient(to bottom left, #FF7F00, #FFD700, #00BFFF, #9901F6)",
-              zIndex: -1,
-            }}
-          >
-          Conheça o Arena Iracema
-          </Text>
-          <br />
+       <Text
+              as={'span'}
+              bgGradient="linear(to-r, #FF7F00, #FFD700, #00BFFF, #9901F6)"
+              bgClip="text">
+   Próximos Eventos
+            </Text>{' '}
+        
           
           
         </Heading>
-        <Text color={"gray.500"}>
-          Snippy is a rich coding snippets app that lets you create your own
-          code snippets, categorize them, and even sync them in the cloud so
-          you can use them anywhere. All that is free!
-        </Text>
-        <Stack
-          spacing={{ base: 4, sm: 6 }}
-          direction={{ base: "column", sm: "row" }}
-        >
-          <Button
-            rounded={"full"}
-            size={"lg"}
-            fontWeight={"normal"}
-            px={6}
-            colorScheme={"red"}
-            bg={"#FF7F00"}
-            _hover={{ bg: "#FFD700" }}
-          >
-            Comprar
-          </Button>
-          <Button
-            rounded={"full"}
-            size={"lg"}
-            fontWeight={"normal"}
-            px={6}
-            leftIcon={<PlayIcon h={4} w={4} color={"gray.300"} />}
-          >
-            Sobre o Arena Iracema
-          </Button>
-        </Stack>
+    <Stack
+      align={"center"}
+      spacing={{ base: 10, md: 20 }}
+      py={{ base: 10, md: 30 }}
+      direction={{ base: "column", md: "row" }}
+    >
+        
+       
+      <Stack flex={1} spacing={{ base: 5, md: 10 }}>
+     
+ 
+      
+        
       </Stack>
+      
       <Flex
         flex={1}
         justify={"center"}
@@ -140,6 +125,7 @@ export default function Hero() {
         position={"relative"}
         w={"full"}
       >
+       
         <Blob
           w={"150%"}
           h={"150%"}
@@ -149,6 +135,7 @@ export default function Hero() {
           zIndex={-1}
           color={useColorModeValue("#00BFFF", "red.400")}
         />
+        
         <Box
           position={"relative"}
           height={"300px"}
@@ -157,6 +144,7 @@ export default function Hero() {
           width={"full"}
           overflow={"hidden"}
         >
+        
           <IconButton
             aria-label={"Play Button"}
             variant={"ghost"}
@@ -172,6 +160,7 @@ export default function Hero() {
           <Carousel />
         </Box>
       </Flex>
+      
     </Stack>
   </Container>
   );
